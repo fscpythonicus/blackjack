@@ -49,7 +49,8 @@ def start():
         # defined as either 1 or 11, so you have to plan for that
         # or else the program won't work.
         text_label.configure(
-            text=f"You've pulled an Ace of {card_icon}{card_name}{card_icon}! What would you like this Ace to be read as?")
+            text=f"You've pulled an Ace of {card_icon}{card_name}{card_icon}! "
+                 f"What would you like this Ace to be read as?")
         ace_1_button.place(x=340, y=335)
         ace_11_button.place(x=440, y=335)
         draw_button.place_forget()
@@ -114,12 +115,14 @@ def game_state_check():  # This function makes it easier to handle win and
     # and made my life easier, so to speak.
     global card_in_hand
     if user_hand == 21:
-        text_label.configure(text=f"You have pulled a {card_in_hand}. Congratulations, you win!")
+        text_label.configure(text=f"You have pulled a {card_in_hand}. "
+                             f"Congratulations, you win!")
         start_button.place_forget()
         draw_button.place_forget()
         play_again_button.place(x=372, y=315)
     elif user_hand > 21:
-        text_label.configure(text=f"You have pulled a {card_in_hand}. Bust! Your ending value was {user_hand}.")
+        text_label.configure(text=f"You have pulled a {card_in_hand}. "
+                             f"Bust! Your ending value was {user_hand}.")
         start_button.place_forget()
         draw_button.place_forget()
         play_again_button.place(x=372, y=315)
