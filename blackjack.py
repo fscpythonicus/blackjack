@@ -62,6 +62,11 @@ def start():
 def ace_1():
     global card_value
     global user_hand
+    global card_in_hand
+    global card_name
+    global card_icon
+    card_suit = random.choice(list(suits.items()))
+    card_name, card_icon = card_suit
     card_value = 1
     text_label.configure(text="The Ace will be read as 1.")
     user_hand += card_value
@@ -76,7 +81,13 @@ def ace_1():
 def ace_11():
     global card_value
     global user_hand
+    global card_in_hand
+    global card_name
+    global card_icon
+    card_suit = random.choice(list(suits.items()))
+    card_name, card_icon = card_suit
     card_value = 11
+    card_in_hand = f"{card_value} of {card_icon}{card_name}{card_icon}"
     text_label.configure(text="The Ace will be read as 11.")
     user_hand += card_value
     cards_in_hand.configure(text=f"Current Hand: {user_hand}")
